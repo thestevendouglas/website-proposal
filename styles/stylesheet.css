@@ -1,0 +1,21 @@
+/* homepage background image */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-nav {
+  background-color: rgba(0,0,0,0.5);
+  background: transparent;
+  border-color: transparent;
+  
+}
+
+body {
+  background-image: url(../images/photovoltaic-2138992.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  
+}
