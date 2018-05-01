@@ -1,0 +1,58 @@
+/* homepage background image */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-nav {
+  background-color: rgba(0,0,0,0.3);
+  background: transparent;
+  border-color: transparent;
+  font-size: 1.2rem;
+  
+}
+
+.searchbar {
+  padding: 1rem;
+  height: 1rem;
+  
+}
+
+body {
+  background-image: url(../images/photovoltaic-2138992.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  font-family: 'Oswald', sans-serif;
+  
+}
+
+.main-homepage {
+  padding: 1rem;
+    background-color: rgba(192,192,192,0.8);
+
+}
+
+.latest-projects, figure {
+  background-color: rgba(204, 255, 153,0.3);
+  padding: 1rem;
+  
+  
+}
+
+.student-of-the-month {
+  background-color: rgba(255, 191, 128, 0.5);
+  padding: 1rem;
+}
+
+footer {
+  padding: 1rem;
+    background-color: rgba(192,192,192,0.8);
+}
+
+.contact-form {
+  padding: 1rem;
+  background-color: rgba(192,192,192,0.8);
+}
+
