@@ -1,10 +1,8 @@
-/* homepage background image */
 body, html {
   margin: 0;
   padding: 0; }
 
 .custom-nav {
-  background-color: rgba(0, 0, 0, 0.3);
   background: transparent;
   border-color: transparent;
   font-size: 1.2rem; }
@@ -22,23 +20,33 @@ body {
   font-family: 'Oswald', sans-serif; }
 
 .main-homepage {
+  background-color: rgba(192, 192, 192, 0.8);
   padding: 1rem;
-  background-color: rgba(192, 192, 192, 0.8); }
+  border: black solid 1px; }
+  .main-homepage .main-text {
+    color: beige;
+    font-size: 1rem; }
 
 .latest-projects, figure {
   background-color: rgba(204, 255, 153, 0.3);
-  padding: 1rem; }
+  padding: 1rem;
+  border: black solid 1px; }
 
 .student-of-the-month {
   background-color: rgba(255, 191, 128, 0.5);
-  padding: 1rem; }
+  padding: 1rem;
+  border: black solid 1px; }
 
 footer {
+  background-color: rgba(192, 192, 192, 0.8);
   padding: 1rem;
-  background-color: rgba(192, 192, 192, 0.8); }
+  border: black solid 1px; }
 
 .contact-form {
   padding: 1rem;
   background-color: rgba(192, 192, 192, 0.8); }
+
+.ad-board {
+  border: black solid 1px; }
 
 /*# sourceMappingURL=new-styles.css.map */

@@ -1,22 +1,36 @@
-/* homepage background image */
+
+$gray-background: rgba(192,192,192,0.8);
+$padding: 1rem;
+$border: black solid 1px;
+@mixin background-style {
+  background-color: rgba(192,192,192,0.8);
+  padding: 1rem;
+}
+
 body, html {
   margin: 0;
   padding: 0;
 }
 
 .custom-nav {
-  background-color: rgba(0,0,0,0.3);
   background: transparent;
   border-color: transparent;
   font-size: 1.2rem;
-  
+
 }
 
+
+
+
 .searchbar {
-  padding: 1rem;
+  padding: $padding;
   height: 1rem;
   
 }
+
+
+
+
 
 body {
   background-image: url(../images/photovoltaic-2138992.jpg);
@@ -29,30 +43,40 @@ body {
 }
 
 .main-homepage {
-  padding: 1rem;
-    background-color: rgba(192,192,192,0.8);
-
+  @include background-style;
+  border: $border;
+  .main-text {
+    color:beige;
+    font-size: 1rem;
+  }
 }
 
 .latest-projects, figure {
   background-color: rgba(204, 255, 153,0.3);
-  padding: 1rem;
-  
+  padding: $padding;
+  border: $border;
   
 }
 
 .student-of-the-month {
   background-color: rgba(255, 191, 128, 0.5);
-  padding: 1rem;
+  padding: $padding;
+  border: $border;
 }
 
 footer {
-  padding: 1rem;
-    background-color: rgba(192,192,192,0.8);
+  @include background-style;
+  border: $border;
 }
 
 .contact-form {
-  padding: 1rem;
-  background-color: rgba(192,192,192,0.8);
+  padding: $padding;
+  background-color: $gray-background;
 }
+
+.ad-board {
+  border: $border;
+}
+
+ 
 
