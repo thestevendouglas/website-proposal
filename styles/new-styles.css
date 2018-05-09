@@ -7,6 +7,17 @@ body, html {
   border-color: transparent;
   font-size: 1.2rem; }
 
+.logo {
+  width: 100%;
+  height: auto; }
+
+span {
+  border-color: black;
+  border-style: solid;
+  border-width: 1.25px;
+  border-radius: 25%;
+  margin-top: 2rem; }
+
 .searchbar {
   padding: 1rem;
   height: 1rem; }
@@ -37,6 +48,12 @@ body {
   padding: 1rem;
   border: black solid 1px; }
 
+.student-photo:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out; }
+
 footer {
   background-color: rgba(192, 192, 192, 0.8);
   padding: 1rem;
@@ -47,6 +64,25 @@ footer {
   background-color: rgba(192, 192, 192, 0.8); }
 
 .ad-board {
-  border: black solid 1px; }
+  border: black solid 1px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out; }
+
+.ad-board:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4); }
+
+@media only screen and (max-width: 990px) {
+  h1 {
+    font-size: 2rem; } }
+@media only screen and (max-width: 1200px) {
+  .custom-nav {
+    font-size: 1rem; } }
+@media only screen and (max-width: 766px) {
+  .custom-nav {
+    margin-left: auto; } }
+@media only screen and (max-width: 465px) {
+  h1 {
+    font-size: 1.25rem; } }
 
 /*# sourceMappingURL=new-styles.css.map */
