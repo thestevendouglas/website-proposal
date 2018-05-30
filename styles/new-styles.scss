@@ -32,6 +32,7 @@ span {
 }
 
 
+
 .searchbar {
   padding: $padding;
   height: 1rem;
@@ -92,6 +93,8 @@ footer {
 .ad-board:hover {
   transform: scale(1.4);
 }
+
+
 
 //media queries for main navigation
 @media only screen and (max-width: 990px) {

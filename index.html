@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     
     
-      
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="components.js"></script>
     <link rel="stylesheet" href="styles/new-styles.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     
@@ -32,189 +33,204 @@
   
   <body>
     <div class="container mb-4">
+      <div id="app-header">
+        <app-header></app-header>
+      <!--  <div class="container mb-4">
 
-    
-    <header>
-      <div class="row">
-        <div class="logo col-lg-3 col-md-3 col-sm-3">
-          <a href="index.html" class=""><img src="images/header_logo-cropped-2.png" alt="header image" class=""></a>
-        </div>
-        
-                
-        <div class=" d-flex justify-content-center col-lg-9 col-md-9 col-sm-9">
-        <nav class="custom-nav navbar navbar-expand-lg navbar-expand-md">
-          <button class=" navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse col-sm-12 float-right" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link text-dark" href="../website-proposal/index.html">Home<span class="sr-only ">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link text-dark" href="#">What is FESC?<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link text-dark" href="#">News<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="#">Energy Industry</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="#">FESC Resources</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More Information
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">FAQ</a>
-                  <a class="dropdown-item" href="#">Educational Programs</a>
-                  <a class="dropdown-item" href="#">Community Outreach Programs</a>
-                  <a class="dropdown-item" href="../website-proposal/data.html">Research and Data</a>
-                </div>
-              </li>
-            </ul>
+
+        <header>
+          <div class="row">
+            <div class="logo col-lg-3 col-md-3 col-sm-3">
+              <a href="index.html" class=""><img src="images/header_logo-cropped-2.png" alt="header image" class=""></a>
+            </div>
+
+
+            <div class=" d-flex justify-content-center col-lg-9 col-md-9 col-sm-9">
+            <nav class="custom-nav navbar navbar-expand-lg navbar-expand-md">
+              <button class=" navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse col-sm-12 float-right" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link text-dark" href="../website-proposal/index.html">Home<span class="sr-only ">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link text-dark" href="#">What is FESC?<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link text-dark" href="#">News<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Energy Industry</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">FESC Resources</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More Information
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">FAQ</a>
+                      <a class="dropdown-item" href="#">Educational Programs</a>
+                      <a class="dropdown-item" href="#">Community Outreach Programs</a>
+                      <a class="dropdown-item" href="../website-proposal/data.html">Research and Data</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            </div>
           </div>
-        </nav>
-        </div>
-      </div>
-        
-      <div class="row mb-4">
-        <h1 class="col-lg-8 col-sm-8">Florida Energy Systems Consortium</h1>
-          <input type="text" placeholder="Search..." class="col-lg-4 col-sm-4 searchbar">
-      </div>
-    </header>
-    
-    
-    
-    <main class="main-homepage">
-      <!-- Mission Statement -->
-      <div class="row">
-        <p class="col-lg-6 main-text">
-          The Florida Energy Systems Consortium (FESC) was created by the Florida State government to promote collaboration among the energy experts at its 12 supported universities to share energy-related expertise. The consortium assists the state in the development and implementation of an environmentally compatible, sustainable, and efficient energy strategic plan. The Consortium was charged to ‘perform research and development on innovative energy systems that lead to alternative energy strategies, improved energy efficiencies, and expanded economic development for the state‘. The legislature appropriated funding for research at five of the universities as well as support for education, outreach, and technology commercialization. The Consortium reports to and provides guidance on an as needed basis to the Florida Legislature, Executive Office of the Governor, and the Florida’s Office of Energy housed in the Florida Department of Agriculture and Consumer Services.
 
-          Overarching to the Consortium’s research strategy is an energy systems approach to identify innovation opportunities, prepare an energy workforce, and guide economic development.
-        </p>
-        
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/YA2ofbdd-G8?rel=0" allowfullscreen class="col-lg-6"></iframe>
-          
-        
-        
-      </div>   
-    </main>
-      
-    <section>
-      <div class="row m-2">
-        <div class="col-lg-6">
-          <h2 class="d-flex justify-content-center"><u>Latest Projects</u></h2>
-          <!-- 'Latest Projects Module -->
-          <h5>Title Description, April 24, 2018</h5>
-          <p class="latest-projects">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium mi vel iaculis tempus. Proin eget leo varius, accumsan augue in, porttitor metus. Nam eget ligula vestibulum, suscipit ligula id, sollicitudin felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur placerat at ante nec condimentum. Quisque orci orci, euismod vel diam at, suscipit sodales odio. Nullam a scelerisque urna, cursus lacinia arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam egestas sem porta diam pretium, ut viverra velit porttitor. Cras accumsan dui lacus, ac egestas leo ultricies sit amet. Nullam erat orci, tristique id turpis vitae, tempor molestie odio. Aenean placerat, leo nec aliquet varius, ipsum lacus condimentum metus, vitae mollis dolor sapien dictum arcu. Aliquam pretium, augue ut venenatis feugiat, elit eros porta purus, nec pellentesque orci lacus ut mauris. Proin sed mi maximus, imperdiet lectus a, sagittis est. Maecenas facilisis, mauris vitae pulvinar fermentum, nibh velit suscipit nulla, in auctor nisi turpis sit amet dolor.
-            
-            <img src="images/project.jpg" alt="blog photo" class="container-fluid mt-2">
-            <a>Students hard at work</a>
-            
+          <div class="row mb-4">
+            <h1 class="col-lg-8 col-sm-8">Florida Energy Systems Consortium</h1>
+              <input type="text" placeholder="Search..." class="col-lg-4 col-sm-4 searchbar">
+          </div>
+        </header> -->
+        </div> 
+
+
+      <main class="main-homepage">
+        <!-- Mission Statement -->
+        <div class="row">
+          <p class="col-lg-6 main-text">
+            The Florida Energy Systems Consortium (FESC) was created by the Florida State government to promote collaboration among the energy experts at its 12 supported universities to share energy-related expertise. The consortium assists the state in the development and implementation of an environmentally compatible, sustainable, and efficient energy strategic plan. The Consortium was charged to ‘perform research and development on innovative energy systems that lead to alternative energy strategies, improved energy efficiencies, and expanded economic development for the state‘. The legislature appropriated funding for research at five of the universities as well as support for education, outreach, and technology commercialization. The Consortium reports to and provides guidance on an as needed basis to the Florida Legislature, Executive Office of the Governor, and the Florida’s Office of Energy housed in the Florida Department of Agriculture and Consumer Services.
+
+            Overarching to the Consortium’s research strategy is an energy systems approach to identify innovation opportunities, prepare an energy workforce, and guide economic development.
           </p>
-        </div>
-        <!-- 'Featured College Student Module' -->
-        <div class="col-lg-6">
-          <h2 class="d-flex justify-content-center"><u>Featured Student</u></h2>
-          <h5>Name, University, Accomplishments</h5>
-          <div class="row d-flex justify-content-center student-of-the-month">
-            <img src="images/student-photo.jpg" alt="student of the month photo" class="student-photo mb-2">
-            <p>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YA2ofbdd-G8?rel=0" allowfullscreen class="col-lg-6"></iframe>
+
+
+
+        </div>   
+      </main>
+
+      <section>
+        <div class="row m-2">
+          <div class="col-lg-6">
+            <h2 class="d-flex justify-content-center"><u>Latest Projects</u></h2>
+            <!-- 'Latest Projects Module -->
+            <h5>Title Description, April 24, 2018</h5>
+            <p class="latest-projects">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium mi vel iaculis tempus. Proin eget leo varius, accumsan augue in, porttitor metus. Nam eget ligula vestibulum, suscipit ligula id, sollicitudin felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur placerat at ante nec condimentum. Quisque orci orci, euismod vel diam at, suscipit sodales odio. Nullam a scelerisque urna, cursus lacinia arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam egestas sem porta diam pretium, ut viverra velit porttitor. Cras accumsan dui lacus, ac egestas leo ultricies sit amet. Nullam erat orci, tristique id turpis vitae, tempor molestie odio. Aenean placerat, leo nec aliquet varius, ipsum lacus condimentum metus, vitae mollis dolor sapien dictum arcu. Aliquam pretium, augue ut venenatis feugiat, elit eros porta purus, nec pellentesque orci lacus ut mauris. Proin sed mi maximus, imperdiet lectus a, sagittis est. Maecenas facilisis, mauris vitae pulvinar fermentum, nibh velit suscipit nulla, in auctor nisi turpis sit amet dolor.
+
+              <img src="images/project.jpg" alt="blog photo" class="container-fluid mt-2">
+              <a>Students hard at work</a>
+
             </p>
           </div>
-        </div>
-      </div>
-    </section>
-    
-      
-    
-<!--Footer-->
-<footer class="page-footer font-small blue pt-4 mt-4">
-
-    <!--Footer Links-->
-    <div class="container-fluid text-center text-md-left">
-        <div class="row">
-
-            <!--First column-->
-            <div class="col-md-6">
-                <h5 class="text-uppercase">Florida Energy Resources</h5>
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="#">Facilities</a>
-                  </li>
-                  <li>
-                    <a href="#">Institutions</a>
-                  </li>
-                  <li>
-                    <a href="#">Universities</a>
-                  </li>
-                  <li>
-                    <a href="#">Careers</a>
-                  </li>
-                </ul>
+          <!-- 'Featured College Student Module' -->
+          <div class="col-lg-6">
+            <h2 class="d-flex justify-content-center"><u>Featured Student</u></h2>
+            <h5>Name, University, Accomplishments</h5>
+            <div class="row d-flex justify-content-center student-of-the-month">
+              <img src="images/student-photo.jpg" alt="student of the month photo" class="student-photo mb-2">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium mi vel iaculis tempus. Proin eget leo varius, accumsan augue in, porttitor metus. Nam eget ligula vestibulum, suscipit ligula id, sollicitudin felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur placerat at ante nec condimentum. Quisque orci orci, euismod vel diam at, suscipit sodales odio. Nullam a scelerisque urna, cursus lacinia arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam egestas sem porta diam pretium, ut viverra velit porttitor. Cras accumsan dui lacus, ac egestas leo ultricies sit amet. Nullam erat orci, tristique id turpis vitae, tempor molestie odio. Aenean placerat, leo nec aliquet varius, ipsum lacus condimentum metus, vitae mollis dolor sapien dictum arcu. Aliquam pretium, augue ut venenatis feugiat, elit eros porta purus, nec pellentesque orci lacus ut mauris. Proin sed mi maximus, imperdiet lectus a, sagittis est. Maecenas facilisis, mauris vitae pulvinar fermentum, nibh velit suscipit nulla, in auctor nisi turpis sit amet dolor.
+              </p>
             </div>
-            <!--/.First column-->
-
-            <!--Second column-->
-            <div class="col-md-6">
-                <h5 class="text-uppercase">Links</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="../website-proposal/advisory-board.html">Advisory Board</a>
-                    </li>
-                    <li>
-                        <a href="#!">Leadership and Oversight Board</a>
-                    </li>
-                    <li>
-                        <a href="#!">Faculty</a>
-                    </li>
-                    <li>
-                        <a href="#!">Florida Universities</a>
-                    </li>
-                    <li>
-                        <a href="../website-proposal/contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!--/.Second column-->
+          </div>
         </div>
-    </div>
-    <!--/.Footer Links-->
-    <div class="d-flex justify-content-center mt-5">
-        
-    
+      </section>
       
+<div class="row d-flex justify-content-center">
+ <div class="bg-light"> 
+    <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Ffloridaenergy.ufl.edu%2F&layout=button&size=large&mobile_iframe=true&width=73&height=28&appId" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+  </div>
+  <div class="bg-light">
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="FESC Latest " data-url="http://floridaenergy.ufl.edu/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</div>
+
+  <!--Footer-->
+<div id='app-footer'>
+  <app-footer></app-footer>
+</div>
+ <!-- <footer class="page-footer font-small blue pt-4 mt-4">
+
       
-     <!-- Facebook share button -->  
-      
-     <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Ffloridaenergy.ufl.edu%2F&layout=button&size=large&mobile_iframe=true&width=73&height=28&appId" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-      
-     <!-- Twitter share button -->  
-     <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="FESC Latest " data-url="http://floridaenergy.ufl.edu/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <div class="container-fluid text-center text-md-left">
+          <div class="row">
+
+              
+              <div class="col-md-6">
+                  <h5 class="text-uppercase">Florida Energy Resources</h5>
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">Facilities</a>
+                    </li>
+                    <li>
+                      <a href="#">Institutions</a>
+                    </li>
+                    <li>
+                      <a href="#">Universities</a>
+                    </li>
+                    <li>
+                      <a href="#">Careers</a>
+                    </li>
+                  </ul>
+              </div>
+              
+
+            
+              <div class="col-md-6">
+                  <h5 class="text-uppercase">Links</h5>
+                  <ul class="list-unstyled">
+                      <li>
+                          <a href="../website-proposal/advisory-board.html">Advisory Board</a>
+                      </li>
+                      <li>
+                          <a href="#!">Leadership and Oversight Board</a>
+                      </li>
+                      <li>
+                          <a href="#!">Faculty</a>
+                      </li>
+                      <li>
+                          <a href="#!">Florida Universities</a>
+                      </li>
+                      <li>
+                          <a href="../website-proposal/contact.html">Contact</a>
+                      </li>
+                  </ul>
+              </div>
+              
+          </div>
       </div>
+      
+      <div class="d-flex justify-content-center mt-5">
+
+
+
+
+         
+
+       <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Ffloridaenergy.ufl.edu%2F&layout=button&size=large&mobile_iframe=true&width=73&height=28&appId" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+
+       
+       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="FESC Latest " data-url="http://floridaenergy.ufl.edu/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+      
+      <div class="footer-copyright py-3 text-center">
+          © 2018 Copyright:
+          <a href="https://thestevendouglas.github.io/website-proposal/"> Florida Energy Systems Consortium </a>
+      </div>
+      
+
+  </footer> -->
   
-    <!--Copyright-->
-    <div class="footer-copyright py-3 text-center">
-        © 2018 Copyright:
-        <a href="https://thestevendouglas.github.io/website-proposal/"> Florida Energy Systems Consortium </a>
-    </div>
-    <!--/.Copyright-->
 
-</footer>
-<!--/.Footer-->
-                      
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+      </div>
     
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    </div>
+    <script src="script.js"></script>
   </body>
 </html>
