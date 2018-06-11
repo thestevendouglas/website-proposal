@@ -24,7 +24,65 @@
     <link rel="stylesheet" href="styles/new-styles.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     
+
+    
     <title>Research and Data</title>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(getData);
+
+      function drawBasic(freshData) {
+        console.log("freshData", freshData)
+        freshData.unshift(["Year", "Billion BTUs"])
+
+        var data = google.visualization.arrayToDataTable(freshData);
+
+        var options = {
+                title: 'Energy Consumption per Billion BTU',
+                curveType: 'function',
+                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                vAxis: {title: 'BTU per Billion', minValue: 0},
+                backgroundColor: '#B1FAFA',
+                titleTextStyle: {color: 'black', fontName: 'Oswald', fontSize: 20},
+                          
+                chartArea: {
+                  backgroundColor: {
+                    stroke: '#222323',
+                    strokeWidth: 2
+                  }
+                }
+          
+              };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        chart.draw(data, options);
+      }
+
+
+      function getData(){
+        // Create a new request object
+        let request = new XMLHttpRequest()
+        // TODO: URL to contact goes here
+        let requestUrl = "https://api.eia.gov/series/?api_key=43fd391551b1a57ac02073fb37571ca7&series_id=SEDS.REPRB.FL.A"
+        // Open a connection
+        request.open('GET', requestUrl, true)
+        // Callback for when the request completes
+        request.onload = function(){
+          let theActualData = JSON.parse(request.response).series[0].data
+
+          drawBasic(theActualData)
+        }
+        // Callback for when there's an error
+        request.error = function(err){
+          console.log("error is: ", err)
+        }
+        // Send the request to the specified URL
+        request.send()
+      }
+
+    </script>
     
   </head>
   <body>
@@ -85,120 +143,27 @@
     </div>
    
     <div class="row d-flex justify-content-center mt-5">  
-      <html>
-        <head>
-          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-          <script type="text/javascript">
-            google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
-
-            function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-              ['Year', 'Production', 'Consumption'],
-              ['1960', 35680, 57344],
-              ['1961', 34417, 62705],
-              ['1962', 35826, 71216],
-              ['1963', 38613, 78258],
-              ['1964', 39016, 87016],
-              ['1965', 39916, 95878],
-              ['1966', 42760, 108610],
-              ['1967', 44550, 119314],
-              ['1968', 49556, 135509],
-              ['1969', 51489, 153032],
-              ['1970', 51035, 171346],
-              ['1971', 49968, 188564],
-              ['1972', 54389, 209665],
-              ['1973', 56250, 237104],
-              ['1974', 52429, 235482],
-              ['1975', 50007, 242096],
-              ['1976', 56507, 252408],
-              ['1977', 59953, 270767],
-              ['1978', 65357, 289031],
-              ['1979', 69419, 295551],
-              ['1980', 90049, 309694],
-              ['1981', 83117, 317921],
-              ['1982', 104674, 315744],
-              ['1983', 91705, 329216],
-              ['1984', 108740, 353246],
-              ['1985', 110698, 379307],
-              ['1986', 116356, 398095],
-              ['1987', 107606, 417862],
-              ['1988', 113802, 444382],
-              ['1989', 232261, 472473],
-              ['1990', 198986, 489741],
-              ['1991', 212955, 499299],
-              ['1992', 230779, 501598],
-              ['1993', 217028, 521176],
-              ['1994', 215563, 544365],
-              ['1995', 220211, 571483],
-              ['1996', 240343, 586291],
-              ['1997', 231308, 597240],
-              ['1998', 205485, 639254],
-              ['1999', 204114, 638966],  
-              ['2000', 194952, 668216],  
-              ['2001', 158038, 684966],  
-              ['2002', 174327, 718136],  
-              ['2003', 188473, 741696],  
-              ['2004', 179462, 745810],  
-              ['2005', 183175, 767622],  
-              ['2006', 185564, 778685],  
-              ['2007', 190489, 788461],  
-              ['2008', 195232, 771702],  
-              ['2009', 213642, 766848],
-              ['2010', 223518, 788887],  
-              ['2011', 222956, 768009],  
-              ['2012', 220020, 752941],  
-              ['2013', 229666, 757189],  
-              ['2014', 226863, 771379],
-              ['2015', 234192, 803865],
-          
+      
+        
          
-            ]);
         
-        
-          
-          
-          
-
-              var options = {
-                title: 'Energy Consumption vs Production per Billion BTU',
-                curveType: 'function',
-                legend: { position: 'bottom' },
-                backgroundColor: '#B1FAFA',
-                titleTextStyle: {color: 'black', fontName: 'Oswald', fontSize: 20},
-                          
-                chartArea: {
-                  backgroundColor: {
-                    stroke: '#222323',
-                    strokeWidth: 2
-                  }
-                }
-          
-              };
-        
-        
-
-              var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-              chart.draw(data, options);
-            }
-          </script>
-        </head>
         <body>
           <div id="curve_chart" style="width: 900px; height: 500px"></div>
         </body>
-      </html>
+      
     </div>
       
-<div class="row d-flex justify-content-center mt-5">    
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+      <div class="row d-flex justify-content-center mt-5">    
+  
+    
+         
+    
+      <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
+        
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Production', 'Consumption'],
               ['1960', 35680, 57344],
@@ -263,13 +228,18 @@
 
         var options = {
           title: 'Florida Energy Production and Consumption per Billion BTU',
-          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          hAxis: {title: 'Year', minValue: 0,  titleTextStyle: {color: '#333'}},
           vAxis: {title: 'BTU per Billion', minValue: 0},
           fontSize: 13,
           backgroundColor:'#B4FCBE',
           titleTextStyle: {color: 'black', fontName: 'Oswald', fontSize: 20},
           
-          
+        chartArea: {
+              backgroundColor: {
+              stroke: '#222323',
+              strokeWidth: 2
+            }
+          }
                 
     
           
@@ -281,33 +251,40 @@
 
         var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
         chart.draw(data, options);
+        
+        chart.draw(data, options);
       }
+      
+          function getData(){
+            // Create a new request object
+            let request = new XMLHttpRequest()
+            // TODO: URL to contact goes here
+            let requestUrl = "http://api.eia.gov/series/?api_key=b6ebc035e317ab85d4d7e2f664eeefbf&series_id=SEDS.TETCB.FL.A"
+            // Open a connection
+            request.open('GET', requestUrl, true)
+            // Callback for when the request completes
+            request.onload = function(){
+              let theActualData = JSON.parse(request.response).series[0].data
+
+              drawBasic(theActualData)
+            }
+            // Callback for when there's an error
+            request.error = function(err){
+              console.log("error is: ", err)
+            }
+            // Send the request to the specified URL
+            request.send()
+          }
     </script>
-  </head>
-  <body>
-    <div id="chart_div" style="width: 100%; height: 500px;"></div>
-  </body>
-</html>
+  
+      <body>
+        <div id="chart_div" style="width: 100%; height: 500px;"></div>
+      </body>
+  
       </div>  
    
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-        
-      
-      
-    <footer class="page-footer font-small blue pt-4 mt-4">
+      <footer class="page-footer font-small blue pt-4 mt-4">
 
     <!--Footer Links-->
     <div class="container-fluid text-center text-md-left">
@@ -381,14 +358,11 @@
 </footer>
       
       
-  
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     </div>
   </body>
 </html>

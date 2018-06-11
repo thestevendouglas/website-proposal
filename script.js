@@ -9,4 +9,5 @@ var footerApp = new Vue ({
     
     
   }
-})
+});
+
